@@ -1,7 +1,5 @@
 import{ FETCH_NASA_PICS } from '../actions/nasaAction'
 
-
-
 const initialState = {
     isFetching: false,
     nasaPic: [],
@@ -15,11 +13,7 @@ export const nasaReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: true
-
             }
-
-
-
         default: 
             return state;
     }
