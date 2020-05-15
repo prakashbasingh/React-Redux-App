@@ -4,16 +4,17 @@ import './index.css';
 import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
-import {createStore } from 'redux';
+import {createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 
-import reducer from './myReducer/reducer'
+import {nasaReducer} from './reducers/nasaReducer';
 
+//need to confirm above^^^
 
-const store = createStore(reducer, applyMiddleware(thunk, logger));
-console.log(store.getStore(), 'What we getting here in STORE ???????!!!!!!')
+const store = createStore(nasaReducer, applyMiddleware(thunk, logger));
+console.log(store.getState(), 'What we getting here in STORE ???????!!!!!!')
 
 
 const rootElement = document.getElementById('root');
